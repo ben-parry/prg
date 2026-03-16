@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Paradigms Research Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Kalice';
+      src: url('kalice-web/Kalice-Regular.woff2') format('woff2'),
+           url('kalice-web/Kalice-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Kalice';
+      src: url('kalice-web/Kalice-Italic.woff2') format('woff2'),
+           url('kalice-web/Kalice-Italic.woff') format('woff');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Kalice';
+      src: url('kalice-web/Kalice-Medium.woff2') format('woff2'),
+           url('kalice-web/Kalice-Medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Kalice';
+      src: url('kalice-web/Kalice-MediumItalic.woff2') format('woff2'),
+           url('kalice-web/Kalice-MediumItalic.woff') format('woff');
+      font-weight: 500;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Kalice';
+      src: url('kalice-web/Kalice-Bold.woff2') format('woff2'),
+           url('kalice-web/Kalice-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Kalice';
+      src: url('kalice-web/Kalice-BoldItalic.woff2') format('woff2'),
+           url('kalice-web/Kalice-BoldItalic.woff') format('woff');
+      font-weight: 700;
+      font-style: italic;
+      font-display: swap;
+    }
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #F0EBE1;
+      --bg-card: #E8E2D6;
+      --text: #2C2418;
+      --text-light: #5A4E3C;
+      --accent: #7B4F35;
+      --accent-hover: #633E29;
+      --accent-olive: #5C6B4F;
+      --rule: #C4B9A6;
+      --rule-dark: #9E9282;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Source Serif 4', 'Georgia', serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* William Morris banner */
+    .morris-banner {
+      width: 100%;
+      height: 80px;
+      background-image: url('morris-wallpaper.jpg');
+      background-repeat: repeat-x;
+      background-size: auto 100%;
+      background-position: center;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      margin: 2rem 0;
+      opacity: 0.85;
+    }
+
+    .page {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 2rem;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding-bottom: 0;
+    }
+
+    .header h1 {
+      font-family: 'Kalice', 'Georgia', serif;
+      font-weight: 700;
+      font-size: 2rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .header .season {
+      font-family: 'Kalice', 'Georgia', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--text-light);
+      letter-spacing: 0.02em;
+    }
+
+    /* About */
+    .about p {
+      margin-bottom: 1rem;
+    }
+
+    .about p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Drop cap */
+    .drop-cap::first-letter {
+      font-family: 'Kalice', 'Georgia', serif;
+      font-weight: 700;
+      float: left;
+      font-size: 3.8em;
+      line-height: 0.8;
+      padding-right: 0.08em;
+      padding-top: 0.06em;
+      color: var(--accent);
+    }
+
+    /* Section headings */
+    h2 {
+      font-family: 'Kalice', 'Georgia', serif;
+      font-weight: 600;
+      font-size: 1.3rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    /* Details list */
+    .details ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+
+    .details li {
+      padding-left: 1.2em;
+      position: relative;
+      margin-bottom: 0.35rem;
+    }
+
+    .details li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--rule-dark);
+    }
+
+    .details .note {
+      font-style: italic;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .details .schedule {
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    /* Tier cards */
+    .tiers {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 0;
+    }
+
+    .tier {
+      border: 1px solid var(--rule);
+      padding: 1.75rem 1.5rem;
+      background: var(--bg-card);
+    }
+
+    .tier h3 {
+      font-family: 'Kalice', 'Georgia', serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .tier .price {
+      font-family: 'Kalice', 'Georgia', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .tier p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 1.25rem;
+      line-height: 1.55;
+    }
+
+    /* Buttons */
+    .btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.85rem 1.5rem;
+      background-color: var(--accent);
+      color: var(--bg);
+      text-decoration: none;
+      font-family: 'Kalice', 'Georgia', serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 2px solid var(--accent);
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    .tier.supporter .btn {
+      background-color: var(--accent-olive);
+      border-color: var(--accent-olive);
+    }
+
+    .tier.supporter .btn:hover {
+      background-color: #4A5740;
+      border-color: #4A5740;
+    }
+
+    .tier.supporter .price {
+      color: var(--accent-olive);
+    }
+
+    /* Rule / divider */
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 2rem 0;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-style: italic;
+      padding-top: 0;
+    }
+
+    /* Desktop */
+    @media (min-width: 600px) {
+      .page {
+        padding: 4rem 2rem 3rem;
+      }
+
+      .header h1 {
+        font-size: 2.4rem;
+      }
+
+      .tiers {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+      }
+
+      .btn {
+        width: auto;
+        display: inline-block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+
+    <header class="header">
+      <h1>The Paradigms<br>Research Group</h1>
+      <p class="season">Season 1: Religion &amp; Work — April to June 2026</p>
+    </header>
+
+    <!-- William Morris banner -->
+    <div class="morris-banner" role="img" aria-label="Decorative William Morris pattern"></div>
+
+    <section class="about">
+      <p class="drop-cap">Every Wednesday in Toronto we read seminal papers together in silence, then hold a careful discussion. We've read close to 40 papers over the past year&thinsp;—&thinsp;from Alan Turing to Hannah Arendt to Charles Taylor.</p>
+      <p>This season we're investigating the relationship between religion and work. What are our current ideas about work? Do they have anything to do with religion? Can we treat our work religiously? Should we?</p>
+    </section>
+
+    <hr>
+
+    <section class="details">
+      <h2>What You Get</h2>
+      <ul>
+        <li>Access to the full season reading list</li>
+        <li>A high quality printed ticket</li>
+        <li>Added to the season's WhatsApp group</li>
+        <li>Printed papers each session</li>
+        <li>Access to the end-of-season party (+1 included)</li>
+        <li>Invite anyone you want to any session</li>
+      </ul>
+      <p class="note">Your first session is always free. After that, membership is required. You can join mid-season but dues aren't pro-rated.</p>
+      <p class="schedule">Wednesdays, 6–9 PM, Toronto.</p>
+      <p class="note">Other details will be shared in the WhatsApp group.</p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Join</h2>
+      <div class="tiers">
+
+        <div class="tier member">
+          <h3>Season Membership</h3>
+          <div class="price">$30</div>
+          <p>Covers printing, space, and logistics for 13 sessions. Less than $2.50 per week.</p>
+          <!-- Replace STRIPE_MEMBER_LINK with your Stripe Payment Link URL -->
+          <a href="https://buy.stripe.com/fZu7sMgBeeigfrDd724sE02" class="btn">Become a Member</a>
+        </div>
+
+        <div class="tier supporter">
+          <h3>Supporter</h3>
+          <div class="price">$400</div>
+          <p>Become a patron of the PRG to help us to invest in PRG to keep it sustainable and growing.</p>
+          <!-- Replace STRIPE_SUPPORTER_LINK with your Stripe Payment Link URL -->
+          <a href="https://buy.stripe.com/eVqcN60Cggqo0wJ7MI4sE03" class="btn">Become a Supporter</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- William Morris banner -->
+    <div class="morris-banner" role="img" aria-label="Decorative William Morris pattern"></div>
+
+    <footer class="footer">
+      <p>A project by Benjamin Parry and Michelle Jia.<br>If you have any questions don't hesitate to reach out to us.</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
