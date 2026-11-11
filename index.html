@@ -4,330 +4,282 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Paradigms Research Group</title>
+  <meta name="theme-color" content="#f1e7d2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
-    @font-face {
-      font-family: 'Kalice';
-      src: url('kalice-web/Kalice-Regular.woff2') format('woff2'),
-           url('kalice-web/Kalice-Regular.woff') format('woff');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Kalice';
-      src: url('kalice-web/Kalice-Italic.woff2') format('woff2'),
-           url('kalice-web/Kalice-Italic.woff') format('woff');
-      font-weight: 400;
-      font-style: italic;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Kalice';
-      src: url('kalice-web/Kalice-Medium.woff2') format('woff2'),
-           url('kalice-web/Kalice-Medium.woff') format('woff');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Kalice';
-      src: url('kalice-web/Kalice-MediumItalic.woff2') format('woff2'),
-           url('kalice-web/Kalice-MediumItalic.woff') format('woff');
-      font-weight: 500;
-      font-style: italic;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Kalice';
-      src: url('kalice-web/Kalice-Bold.woff2') format('woff2'),
-           url('kalice-web/Kalice-Bold.woff') format('woff');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Kalice';
-      src: url('kalice-web/Kalice-BoldItalic.woff2') format('woff2'),
-           url('kalice-web/Kalice-BoldItalic.woff') format('woff');
-      font-weight: 700;
-      font-style: italic;
-      font-display: swap;
-    }
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    @font-face { font-family: 'Kalice'; src: url('kalice-web/Kalice-Regular.woff2') format('woff2'), url('kalice-web/Kalice-Regular.woff') format('woff'); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Kalice'; src: url('kalice-web/Kalice-Italic.woff2') format('woff2'), url('kalice-web/Kalice-Italic.woff') format('woff'); font-weight: 400; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Kalice'; src: url('kalice-web/Kalice-Medium.woff2') format('woff2'), url('kalice-web/Kalice-Medium.woff') format('woff'); font-weight: 500; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Kalice'; src: url('kalice-web/Kalice-Bold.woff2') format('woff2'), url('kalice-web/Kalice-Bold.woff') format('woff'); font-weight: 700; font-style: normal; font-display: swap; }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg: #F0EBE1;
-      --bg-card: #E8E2D6;
-      --text: #2C2418;
-      --text-light: #5A4E3C;
-      --accent: #7B4F35;
-      --accent-hover: #633E29;
-      --accent-olive: #5C6B4F;
-      --rule: #C4B9A6;
-      --rule-dark: #9E9282;
+      --bg: #f1e7d2;          /* vellum */
+      --bg-card: #f8f1e2;
+      --text: #2b2118;        /* iron-gall ink */
+      --text-light: #6a5a45;
+      --accent: #b83a26;      /* vermilion */
+      --accent-hover: #9a2d1c;
+      --lapis: #2a4a8c;
+      --lapis-hover: #1f3a72;
+      --gold: #c0922f;
+      --gold-lt: #e2bf63;
+      --rule: #d8c9a8;
+      --rule-dark: #b9a47c;
     }
+
+    html { background: var(--bg); }
 
     body {
       background-color: var(--bg);
       color: var(--text);
-      font-family: 'Source Serif 4', 'Georgia', serif;
+      font-family: 'Source Serif 4', Georgia, serif;
       font-size: 17px;
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.25  0 0 0 0 0.12  0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.18;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    /* William Morris banner */
-    .morris-banner {
+    ::selection { background: var(--gold-lt); color: var(--text); }
+
+    /* bas-de-page: real marginalia standing on a painted bar */
+    .banner {
+      position: relative;
+      z-index: 1;
       width: 100%;
-      height: 80px;
-      background-image: url('morris-wallpaper.jpg');
-      background-repeat: repeat-x;
-      background-size: auto 100%;
-      background-position: center;
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      margin: 2rem 0;
-      opacity: 0.85;
+      overflow: hidden;
+      margin: 2.25rem 0;
+      --s: 0.62;
     }
+    .figs {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: end;
+      column-gap: calc(2.2rem * var(--s));
+      padding-top: 0.5rem;
+      margin-bottom: -6px;           /* feet sit on the bar */
+    }
+    .side { display: flex; align-items: flex-end; gap: calc(2.4rem * var(--s)); min-width: 0; }
+    .side.left { justify-content: flex-end; }
+    .side.right { justify-content: flex-start; }
+    .fig {
+      display: block;
+      flex: 0 0 auto;
+      height: calc(var(--h) * var(--s));
+      width: auto;
+      mix-blend-mode: multiply;
+      transform-origin: 50% 100%;
+      transition: transform 0.25s ease;
+    }
+    .fig:hover { transform: rotate(-3deg) scale(1.06); }
+    .bar { display: block; width: 100%; height: 26px; position: relative; }
 
-    .page {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 2rem;
-    }
+    .page { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; padding: 0 1.5rem; }
+    .page.top { padding-top: 3rem; }
+    .page.bottom { padding-bottom: 3rem; }
 
     /* Header */
-    .header {
-      text-align: center;
-      padding-bottom: 0;
-    }
-
+    .header { text-align: center; }
     .header h1 {
-      font-family: 'Kalice', 'Georgia', serif;
+      font-family: 'Kalice', Georgia, serif;
       font-weight: 700;
-      font-size: 2rem;
+      font-size: 1.9rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       line-height: 1.2;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
+      color: var(--text);
+      /* gilded, a little much, on purpose */
+      text-shadow: 2px 2px 0 var(--gold-lt), 3px 3px 0 var(--gold);
     }
-
     .header .season {
-      font-family: 'Kalice', 'Georgia', serif;
+      font-family: 'Kalice', Georgia, serif;
       font-style: italic;
-      font-size: 1.15rem;
-      color: var(--text-light);
+      font-size: 1.2rem;
+      color: var(--accent);
       letter-spacing: 0.02em;
     }
-
-    .header .byline {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      font-style: italic;
-      margin-top: 0.4rem;
-    }
+    .header .byline { font-size: 0.9rem; color: var(--text-light); font-style: italic; margin-top: 0.4rem; }
 
     /* About */
-    .about p {
-      margin-bottom: 1rem;
-    }
+    .about p { margin-bottom: 1rem; }
+    .about p:last-child { margin-bottom: 0; }
 
-    .about p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Drop cap */
+    /* illuminated initial: gold leaf on lapis */
     .drop-cap::first-letter {
-      font-family: 'Kalice', 'Georgia', serif;
+      font-family: 'Kalice', Georgia, serif;
       font-weight: 700;
       float: left;
-      font-size: 3.8em;
-      line-height: 0.8;
-      padding-right: 0.08em;
-      padding-top: 0.06em;
-      color: var(--accent);
+      font-size: 3.4em;
+      line-height: 1;
+      padding: 0.08em 0.14em 0.02em;
+      margin: 0.08em 0.18em 0 0;
+      color: var(--gold-lt);
+      background: var(--lapis);
+      border: 2px solid var(--gold);
+      box-shadow: 3px 3px 0 var(--accent);
     }
 
-    /* Section headings */
     h2 {
-      font-family: 'Kalice', 'Georgia', serif;
+      font-family: 'Kalice', Georgia, serif;
       font-weight: 600;
       font-size: 1.3rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-bottom: 1rem;
-      color: var(--text);
     }
+    h2::before { content: '❦ '; color: var(--accent); }
 
-    /* Details list */
-    .details ul {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 1rem;
-    }
-
-    .details li {
-      padding-left: 1.2em;
-      position: relative;
-      margin-bottom: 0.35rem;
-    }
-
-    .details li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--rule-dark);
-    }
-
-    .details .note {
-      font-style: italic;
-      color: var(--text-light);
-      font-size: 0.95rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .details .schedule {
-      font-weight: 600;
-      margin-top: 1rem;
-    }
-
-    /* Tier cards */
-    .tiers {
+    /* Readings */
+    .readings h2 + ol { margin-bottom: 2rem; }
+    .readings ol { list-style: none; counter-reset: rd; }
+    .readings li {
+      counter-increment: rd;
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      margin-top: 0;
+      grid-template-columns: 2.6rem 1fr;
+      padding: 0.5rem 0;
+      border-bottom: 1px dotted var(--rule-dark);
+      line-height: 1.45;
     }
+    .readings li:last-child { border-bottom: none; }
+    .readings li::before {
+      content: counter(rd, upper-roman) '.';
+      grid-row: span 3;
+      font-family: 'Kalice', Georgia, serif;
+      font-size: 0.85rem;
+      color: var(--accent);
+      padding-top: 0.15rem;
+    }
+    .readings .who { font-weight: 600; }
+    .readings .what, .readings .yr { display: block; grid-column: 2; }
+    .readings .yr { font-size: 0.85rem; color: var(--text-light); font-style: italic; }
+    .readings a.what { color: var(--lapis); text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .readings a.what:hover { color: var(--accent); }
 
+    /* Membership details */
+    .details ul { list-style: none; margin-bottom: 1rem; }
+    .details li { padding-left: 1.3em; position: relative; margin-bottom: 0.35rem; }
+    .details li::before { content: '✠'; position: absolute; left: 0; color: var(--accent); }
+    .details .note { font-style: italic; color: var(--text-light); font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .details .schedule { font-weight: 600; margin-top: 1rem; }
+
+    /* Tiers */
+    .tiers { display: grid; grid-template-columns: 1fr; gap: 1rem; }
     .tier {
-      border: 1px solid var(--rule);
+      border: 2px solid var(--gold);
+      outline: 1px solid var(--rule-dark);
+      outline-offset: 4px;
       padding: 1.75rem 1.5rem;
       background: var(--bg-card);
       display: flex;
       flex-direction: column;
+      margin: 5px;
     }
+    .tier h3 { font-family: 'Kalice', Georgia, serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 0.25rem; }
+    .tier .price { font-family: 'Kalice', Georgia, serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
+    .tier p { font-size: 0.95rem; color: var(--text-light); margin-bottom: 1.25rem; line-height: 1.55; flex: 1; }
 
-    .tier h3 {
-      font-family: 'Kalice', 'Georgia', serif;
-      font-weight: 700;
-      font-size: 1.2rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .tier .price {
-      font-family: 'Kalice', 'Georgia', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .tier p {
-      font-size: 0.95rem;
-      color: var(--text-light);
-      margin-bottom: 1.25rem;
-      line-height: 1.55;
-      flex: 1;
-    }
-
-    /* Buttons */
     .btn {
       display: block;
       width: 100%;
       text-align: center;
       padding: 0.85rem 1.5rem;
       background-color: var(--accent);
-      color: var(--bg);
+      color: #fbf4e4;
       text-decoration: none;
-      font-family: 'Kalice', 'Georgia', serif;
+      font-family: 'Kalice', Georgia, serif;
       font-weight: 600;
       font-size: 1.05rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       border: 2px solid var(--accent);
-      transition: background-color 0.2s, color 0.2s;
+      box-shadow: 3px 3px 0 var(--gold);
+      transition: background-color 0.2s, transform 0.15s, box-shadow 0.15s;
     }
+    .btn:hover { background-color: var(--accent-hover); transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--gold); }
+    .tier.supporter .btn { background-color: var(--lapis); border-color: var(--lapis); }
+    .tier.supporter .btn:hover { background-color: var(--lapis-hover); }
+    .tier.supporter .price { color: var(--lapis); }
 
-    .btn:hover {
-      background-color: var(--accent-hover);
-      border-color: var(--accent-hover);
-    }
-
-    .tier.supporter .btn {
-      background-color: var(--accent-olive);
-      border-color: var(--accent-olive);
-    }
-
-    .tier.supporter .btn:hover {
-      background-color: #4A5740;
-      border-color: #4A5740;
-    }
-
-    .tier.supporter .price {
-      color: var(--accent-olive);
-    }
-
-    /* Rule / divider */
     hr {
       border: none;
-      border-top: 1px solid var(--rule);
-      margin: 2rem 0;
-    }
-
-    /* Footer */
-    .footer {
       text-align: center;
-      font-size: 0.9rem;
-      color: var(--text-light);
-      font-style: italic;
-      padding-top: 0;
+      margin: 2.2rem 0;
+      height: 1rem;
+      background: linear-gradient(to right, var(--rule-dark) 0 46%, transparent 46% 54%, var(--rule-dark) 54%) center / 100% 1px no-repeat;
+      overflow: visible;
+    }
+    hr::after {
+      content: '✦';
+      position: relative;
+      top: -0.2rem;
+      color: var(--gold);
     }
 
-    /* Desktop */
+    .footer { text-align: center; font-size: 0.9rem; color: var(--text-light); font-style: italic; }
+    .footer a { color: var(--text-light); }
+
     @media (min-width: 600px) {
-      .page {
-        padding: 4rem 2rem 3rem;
-      }
-
-      .header h1 {
-        font-size: 2.4rem;
-      }
-
-      .tiers {
-        grid-template-columns: 1fr 1fr;
-        gap: 1.25rem;
-      }
-
-      .btn {
-        width: auto;
-        display: inline-block;
-      }
+      .page.top { padding-top: 4rem; }
+      .header h1 { font-size: 2.4rem; }
+      .tiers { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+      .btn { width: auto; display: inline-block; }
+      .banner { --s: 1; }
     }
   </style>
 </head>
 <body>
 
-  <div class="page">
-
+  <div class="page top">
     <header class="header">
       <h1>The Paradigms<br>Research Group</h1>
-      <p class="season">Season 1: Religion &amp; Work — April to June 2026</p>
+      <p class="season">Season 2: Renegades, Rebels, and Excommuniés</p>
       <p class="byline">A project by Benjamin Parry and Michelle Jia.</p>
     </header>
+  </div>
 
-    <!-- William Morris banner -->
-    <div class="morris-banner" role="img" aria-label="Decorative William Morris pattern"></div>
+  <div class="banner">
+<div class="figs"><div class="side left"><img class="fig " src="marginalia/fox-preaching.webp" alt="A fox dressed as a friar preaching to a flock of geese" title="Smithfield Decretals, c. 1340. British Library, Royal MS 10 E IV, f. 49v" style="--h:120px"><img class="fig " src="marginalia/rabbit-greyhound.webp" alt="A rabbit riding a greyhound" title="Medieval manuscript marginalia, 14th century" style="--h:168px"></div><div class="mid"><img class="fig centre" src="marginalia/fox-reading.webp" alt="A fox in a cleric's hood reading a book" title="Book of Hours, Utrecht, c. 1460. Museum Meermanno, MS 10 F 50, f. 6r" style="--h:200px"></div><div class="side right"><img class="fig " src="marginalia/fox-queck.webp" alt="A fox running off with a goose, which says 'queck'" title="Gorleston Psalter, 1310s. British Library, Add MS 49622" style="--h:140px"><img class="fig " src="marginalia/axe-rabbit.webp" alt="A rabbit swinging a battle-axe" title="Gorleston Psalter, 1310s. British Library, Add MS 49622" style="--h:116px"><img class="fig " src="marginalia/grimace.webp" alt="A man pulling a face" title="Gorleston Psalter, 1310s. British Library, Add MS 49622, f. 123r" style="--h:176px"></div></div><svg class="bar" viewBox="0 0 1400 26" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="0.0" y="10.5" width="94.3" height="5" fill="#b83a26"/><path d="M6.0 13.0 L88.3 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="94.3" y="10.5" width="112.7" height="5" fill="#2a4a8c"/><path d="M100.3 13.0 L200.9 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="206.9" y="10.5" width="102.2" height="5" fill="#b83a26"/><path d="M212.9 13.0 L303.1 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="309.1" y="10.5" width="116.2" height="5" fill="#2a4a8c"/><path d="M315.1 13.0 L419.4 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="425.4" y="10.5" width="117.5" height="5" fill="#b83a26"/><path d="M431.4 13.0 L536.9 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="542.9" y="10.5" width="83.9" height="5" fill="#2a4a8c"/><path d="M548.9 13.0 L620.8 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="626.8" y="10.5" width="80.8" height="5" fill="#b83a26"/><path d="M632.8 13.0 L701.6 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="707.6" y="10.5" width="130.2" height="5" fill="#2a4a8c"/><path d="M713.6 13.0 L831.9 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="837.9" y="10.5" width="95.6" height="5" fill="#b83a26"/><path d="M843.9 13.0 L927.4 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="933.4" y="10.5" width="94.1" height="5" fill="#2a4a8c"/><path d="M939.4 13.0 L1021.5 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="1027.5" y="10.5" width="139.7" height="5" fill="#b83a26"/><path d="M1033.5 13.0 L1161.2 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="1167.2" y="10.5" width="108.2" height="5" fill="#2a4a8c"/><path d="M1173.2 13.0 L1269.5 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="1275.5" y="10.5" width="130.2" height="5" fill="#b83a26"/><path d="M1281.5 13.0 L1399.6 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><path d="M0 13.0 L10 14.5 L20 15.9 L30 17.1 L40 18.0 L50 18.7 L60 19.0 L70 18.9 L80 18.5 L90 17.7 L100 16.6 L110 15.3 L120 13.8 L130 12.4 L140 10.9 L150 9.6 L160 8.5 L170 7.6 L180 7.1 L190 7.0 L200 7.2 L210 7.8 L220 8.8 L230 10.0 L240 11.3 L250 12.8 L260 14.3 L270 15.7 L280 16.9 L290 17.9 L300 18.6 L310 19.0 L320 18.9 L330 18.5 L340 17.8 L350 16.7 L360 15.5 L370 14.0 L380 12.5 L390 11.1 L400 9.7 L410 8.6 L420 7.7 L430 7.2 L440 7.0 L450 7.2 L460 7.7 L470 8.6 L480 9.8 L490 11.1 L500 12.6 L510 14.1 L520 15.5 L530 16.8 L540 17.8 L550 18.6 L560 18.9 L570 19.0 L580 18.6 L590 17.9 L600 16.9 L610 15.7 L620 14.2 L630 12.7 L640 11.3 L650 9.9 L660 8.7 L670 7.8 L680 7.2 L690 7.0 L700 7.1 L710 7.7 L720 8.5 L730 9.6 L740 10.9 L750 12.4 L760 13.9 L770 15.3 L780 16.6 L790 17.7 L800 18.5 L810 18.9 L820 19.0 L830 18.7 L840 18.0 L850 17.1 L860 15.8 L870 14.4 L880 12.9 L890 11.5 L900 10.1 L910 8.9 L920 7.9 L930 7.3 L940 7.0 L950 7.1 L960 7.6 L970 8.4 L980 9.5 L990 10.8 L1000 12.2 L1010 13.7 L1020 15.2 L1030 16.5 L1040 17.6 L1050 18.4 L1060 18.9 L1070 19.0 L1080 18.7 L1090 18.1 L1100 17.2 L1110 16.0 L1120 14.6 L1130 13.1 L1140 11.7 L1150 10.3 L1160 9.0 L1170 8.0 L1180 7.4 L1190 7.0 L1200 7.1 L1210 7.5 L1220 8.2 L1230 9.3 L1240 10.6 L1250 12.0 L1260 13.5 L1270 15.0 L1280 16.3 L1290 17.4 L1300 18.3 L1310 18.8 L1320 19.0 L1330 18.8 L1340 18.2 L1350 17.3 L1360 16.2 L1370 14.8 L1380 13.3 L1390 11.9 L1400 10.4" fill="none" stroke="#6d8a45" stroke-width="1" opacity="0.85"/><path transform="translate(24 16.4) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(94 17.3) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(164 8.1) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(234 10.5) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(304 18.8) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(374 13.4) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(444 7.0) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(514 14.7) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(584 18.4) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(654 9.4) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(724 8.9) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(794 18.1) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(864 15.3) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(934 7.1) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(1004 12.8) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(1074 18.9) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(1144 11.1) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(1214 7.7) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(1284 16.8) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(1354 16.9) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><circle cx="0.0" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="94.3" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="206.9" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="309.1" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="425.4" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="542.9" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="626.8" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="707.6" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="837.9" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="933.4" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="1027.5" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="1167.2" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="1275.5" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/></svg>
+  </div>
+
+  <div class="page">
 
     <section class="about">
-      <p class="drop-cap">Every Wednesday in Toronto we read seminal papers together in silence, then hold a careful discussion. We've read close to 40 papers over the past year&thinsp;—&thinsp;from Alan Turing to Hannah Arendt to Charles Taylor.</p>
-      <p>This season we're investigating the relationship between religion and work. What are our current ideas about work? Do they have anything to do with religion? Can we treat our work religiously? Should we?</p>
+      <p class="drop-cap">The Paradigmatic Radical Gathering is a weekly gym for the mind where we read papers that could shake us out of the matrix. We are currently in Season 2: Renegades, Rebels, and Excommuniés the ideas and people that just don't fit. We're going to get spicy.</p>
+    </section>
+
+    <hr>
+
+    <section class="readings">
+      <h2>Season 2 Upcoming Readings</h2>
+      <ol>
+        <li><span class="who">Nick Land</span> <span class="what">“The Dark Enlightenment,” Part 1</span> <span class="yr">2012</span></li>
+        <li><span class="who">Amia Srinivasan</span> <span class="what">“Talking to My Students About Porn”</span> <span class="yr">2021</span></li>
+        <li><span class="who">Val Plumwood &amp; Nick Bostrom</span> <span class="what">“Being Prey” + “The Fable of the Dragon-Tyrant”</span> <span class="yr">1996 / 2005</span></li>
+        <li><span class="who">Marquis de Sade</span> <span class="what">“Yet Another Effort, Frenchmen, If You Would Become Republicans”</span> <span class="yr">1795</span></li>
+        <li><span class="who">Ayn Rand</span> <span class="what">“The Objectivist Ethics”</span> <span class="yr">1961</span></li>
+        <li><span class="who">Timothy Leary</span> <span class="what">“Start Your Own Religion”</span> <span class="yr">1967</span></li>
+        <li><span class="who">Camille Paglia</span> <span class="what">“Rape and Modern Sex War”</span> <span class="yr">1991</span></li>
+        <li><span class="who">Leon Trotsky</span> <span class="what">“Their Morals and Ours”</span> <span class="yr">1938</span></li>
+        <li><span class="who">Friedrich Nietzsche</span> <span class="what"><em>On the Genealogy of Morals</em>, First Essay</span> <span class="yr">1887</span></li>
+        <li><span class="who">Anonymous</span> <span class="what"><em>The Gospel of Thomas</em></span> <span class="yr">c. 100</span></li>
+      </ol>
+      <h2>Season 2 Past Readings</h2>
+      <ol>
+        <li><span class="who">Václav Havel</span> <a class="what" href="prg-s2e1-havel.pdf">“The Power of the Powerless”</a> <span class="yr">1978</span></li>
+        <li><span class="who">Susan Sontag</span> <a class="what" href="prg-s2e2-sontag.pdf">“Fascinating Fascism”</a> <span class="yr">1975</span></li>
+      </ol>
     </section>
 
     <hr>
@@ -352,31 +304,32 @@
       <div class="tiers">
 
         <div class="tier member">
-          <h3>Season Membership</h3>
-          <div class="price">$32</div>
-          <p>Covers printing and logistics for 13 sessions. Less than $2.50 a session.</p>
-          <!-- Replace STRIPE_MEMBER_LINK with your Stripe Payment Link URL -->
-          <a href="https://buy.stripe.com/fZu7sMgBeeigfrDd724sE02" class="btn">Become a Member</a>
+          <h3>Monthly Membership Dues</h3>
+          <div class="price">$25</div>
+          <p>Monthly dues for active members at $25 a month. Cancel anytime.</p>
+          <a href="https://buy.stripe.com/7sYeVedp25LKcfr9UQ4sE08" class="btn">Become a Member</a>
         </div>
 
         <div class="tier supporter">
-          <h3>Supporter</h3>
-          <div class="price">$320</div>
-          <p>Help us invest in PRG to keep it sustainable and growing.</p>
-          <!-- Replace STRIPE_SUPPORTER_LINK with your Stripe Payment Link URL -->
-          <a href="https://buy.stripe.com/eVqcN60Cggqo0wJ7MI4sE03" class="btn">Become a Supporter</a>
+          <h3>PRG Supporter Fund</h3>
+          <div class="price">$250</div>
+          <p>A one-time payment of $250 to help support the upkeep and expansion of the PRG</p>
+          <a href="https://buy.stripe.com/aFaaEY98M4HG5R30kg4sE09" class="btn">Become a Supporter</a>
         </div>
 
       </div>
     </section>
 
-    <!-- William Morris banner -->
-    <div class="morris-banner" role="img" aria-label="Decorative William Morris pattern"></div>
+  </div>
 
+  <div class="banner">
+<div class="figs"><div class="side left"><img class="fig " src="marginalia/knight-fish.webp" alt="A knight riding a fish into battle with a two-headed hybrid" title="Breviary of Renaud de Bar, 1302–03. Verdun, Bibliothèque municipale, MS 107, f. 111" style="--h:132px"></div><div class="mid"><img class="fig centre" src="marginalia/headless-saints.webp" alt="Two headless saints carrying their own heads" title="Breviary of Renaud de Bar, 1302–05. Verdun, Bibliothèque municipale, MS 107, f. 99v" style="--h:140px"></div><div class="side right"><img class="fig " src="marginalia/monkey-boar.webp" alt="A monkey jousting on the back of a boar" title="Maastricht Hours, early 14th century. British Library, Stowe MS 17, f. 124r" style="--h:160px"></div></div><svg class="bar" viewBox="0 0 1400 26" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="0.0" y="10.5" width="102.9" height="5" fill="#b83a26"/><path d="M6.0 13.0 L96.9 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="102.9" y="10.5" width="93.8" height="5" fill="#2a4a8c"/><path d="M108.9 13.0 L190.7 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="196.7" y="10.5" width="90.0" height="5" fill="#b83a26"/><path d="M202.7 13.0 L280.7 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="286.7" y="10.5" width="134.8" height="5" fill="#2a4a8c"/><path d="M292.7 13.0 L415.5 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="421.5" y="10.5" width="114.7" height="5" fill="#b83a26"/><path d="M427.5 13.0 L530.2 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="536.2" y="10.5" width="121.4" height="5" fill="#2a4a8c"/><path d="M542.2 13.0 L651.6 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="657.6" y="10.5" width="113.2" height="5" fill="#b83a26"/><path d="M663.6 13.0 L764.8 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="770.8" y="10.5" width="103.0" height="5" fill="#2a4a8c"/><path d="M776.8 13.0 L867.8 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="873.8" y="10.5" width="123.9" height="5" fill="#b83a26"/><path d="M879.8 13.0 L991.7 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="997.7" y="10.5" width="114.6" height="5" fill="#2a4a8c"/><path d="M1003.7 13.0 L1106.3 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="1112.3" y="10.5" width="126.9" height="5" fill="#b83a26"/><path d="M1118.3 13.0 L1233.1 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="1239.1" y="10.5" width="119.7" height="5" fill="#2a4a8c"/><path d="M1245.1 13.0 L1352.8 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><rect x="1358.8" y="10.5" width="130.4" height="5" fill="#b83a26"/><path d="M1364.8 13.0 L1483.2 13.0" stroke="#f4ecdb" stroke-width="0.8" stroke-dasharray="1 5" opacity="0.8"/><path d="M0 13.0 L10 14.5 L20 15.9 L30 17.1 L40 18.0 L50 18.7 L60 19.0 L70 18.9 L80 18.5 L90 17.7 L100 16.6 L110 15.3 L120 13.8 L130 12.4 L140 10.9 L150 9.6 L160 8.5 L170 7.6 L180 7.1 L190 7.0 L200 7.2 L210 7.8 L220 8.8 L230 10.0 L240 11.3 L250 12.8 L260 14.3 L270 15.7 L280 16.9 L290 17.9 L300 18.6 L310 19.0 L320 18.9 L330 18.5 L340 17.8 L350 16.7 L360 15.5 L370 14.0 L380 12.5 L390 11.1 L400 9.7 L410 8.6 L420 7.7 L430 7.2 L440 7.0 L450 7.2 L460 7.7 L470 8.6 L480 9.8 L490 11.1 L500 12.6 L510 14.1 L520 15.5 L530 16.8 L540 17.8 L550 18.6 L560 18.9 L570 19.0 L580 18.6 L590 17.9 L600 16.9 L610 15.7 L620 14.2 L630 12.7 L640 11.3 L650 9.9 L660 8.7 L670 7.8 L680 7.2 L690 7.0 L700 7.1 L710 7.7 L720 8.5 L730 9.6 L740 10.9 L750 12.4 L760 13.9 L770 15.3 L780 16.6 L790 17.7 L800 18.5 L810 18.9 L820 19.0 L830 18.7 L840 18.0 L850 17.1 L860 15.8 L870 14.4 L880 12.9 L890 11.5 L900 10.1 L910 8.9 L920 7.9 L930 7.3 L940 7.0 L950 7.1 L960 7.6 L970 8.4 L980 9.5 L990 10.8 L1000 12.2 L1010 13.7 L1020 15.2 L1030 16.5 L1040 17.6 L1050 18.4 L1060 18.9 L1070 19.0 L1080 18.7 L1090 18.1 L1100 17.2 L1110 16.0 L1120 14.6 L1130 13.1 L1140 11.7 L1150 10.3 L1160 9.0 L1170 8.0 L1180 7.4 L1190 7.0 L1200 7.1 L1210 7.5 L1220 8.2 L1230 9.3 L1240 10.6 L1250 12.0 L1260 13.5 L1270 15.0 L1280 16.3 L1290 17.4 L1300 18.3 L1310 18.8 L1320 19.0 L1330 18.8 L1340 18.2 L1350 17.3 L1360 16.2 L1370 14.8 L1380 13.3 L1390 11.9 L1400 10.4" fill="none" stroke="#6d8a45" stroke-width="1" opacity="0.85"/><path transform="translate(24 16.4) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(94 17.3) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(164 8.1) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(234 10.5) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(304 18.8) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(374 13.4) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(444 7.0) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(514 14.7) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(584 18.4) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(654 9.4) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(724 8.9) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(794 18.1) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(864 15.3) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(934 7.1) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(1004 12.8) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(1074 18.9) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(1144 11.1) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(1214 7.7) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(1284 16.8) rotate(-40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><path transform="translate(1354 16.9) rotate(40)" d="M0 0 C-6 -4 -7 -11 -2 -13 C0 -12 0 -11 0 -10 C0 -11 0 -12 2 -13 C7 -11 6 -4 0 0 Z" fill="#6d8a45" stroke="#2b2118" stroke-width="0.6"/><circle cx="0.0" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="102.9" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="196.7" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="286.7" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="421.5" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="536.2" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="657.6" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="770.8" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="873.8" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="997.7" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="1112.3" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="1239.1" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/><circle cx="1358.8" cy="13.0" r="4" fill="#c0922f" stroke="#2b2118" stroke-width="0.7"/></svg>
+  </div>
+
+  <div class="page bottom">
     <footer class="footer">
-      <p>If you have any questions don't hesitate to reach out ben@benparry.ca or (647) 915-3435</p>
+      <p>If you have any questions don't hesitate to reach out <a href="mailto:ben@benparry.ca">ben@benparry.ca</a> or (647) 915-3435</p>
     </footer>
-
   </div>
 
 </body>
