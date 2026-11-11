@@ -99,6 +99,7 @@ def banner(layout, seed):
 PAST = [
     ("Václav Havel", "“The Power of the Powerless”", "1978", "prg-s2e1-havel.pdf"),
     ("Susan Sontag", "“Fascinating Fascism”", "1975", "prg-s2e2-sontag.pdf"),
+    ("Martin Luther", "<em>To the Christian Nobility of the German Nation</em>", "1520", "prg-s2e3-luther.pdf"),
 ]
 
 UPCOMING = [
