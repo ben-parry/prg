@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Paradigms Research Group</title>
+  <title>The Paradigmatic Radicals Gang</title>
   <meta name="theme-color" content="#f1e7d2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -139,10 +139,14 @@
       text-transform: uppercase;
       margin-bottom: 1rem;
     }
-    h2::before { content: '❦ '; color: var(--accent); }
 
     /* Readings */
-    .readings h2 + ol { margin-bottom: 2rem; }
+    .readings ol { margin-bottom: 2rem; }
+    .readings ol:last-child { margin-bottom: 0; }
+    .readings .aside { font-style: italic; color: var(--text-light); font-size: 0.95rem; margin: -0.5rem 0 0.75rem; }
+    .readings ol.plain li { grid-template-columns: 1fr; }
+    .readings ol.plain li::before { content: none; }
+    .readings ol.plain .what, .readings ol.plain .yr { grid-column: 1; }
     .readings ol { list-style: none; counter-reset: rd; }
     .readings li {
       counter-increment: rd;
@@ -166,13 +170,6 @@
     .readings .yr { font-size: 0.85rem; color: var(--text-light); font-style: italic; }
     .readings a.what { color: var(--lapis); text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 3px; }
     .readings a.what:hover { color: var(--accent); }
-
-    /* Membership details */
-    .details ul { list-style: none; margin-bottom: 1rem; }
-    .details li { padding-left: 1.3em; position: relative; margin-bottom: 0.35rem; }
-    .details li::before { content: '✠'; position: absolute; left: 0; color: var(--accent); }
-    .details .note { font-style: italic; color: var(--text-light); font-size: 0.95rem; margin-bottom: 0.5rem; }
-    .details .schedule { font-weight: 600; margin-top: 1rem; }
 
     /* Tiers */
     .tiers { display: grid; grid-template-columns: 1fr; gap: 1rem; }
@@ -227,7 +224,7 @@
       color: var(--gold);
     }
 
-    .footer { text-align: center; font-size: 0.9rem; color: var(--text-light); font-style: italic; }
+    .footer { text-align: center; font-size: 0.9rem; color: var(--text-light); }
     .footer a { color: var(--text-light); }
 
     @media (min-width: 600px) {
@@ -243,7 +240,7 @@
 
   <div class="page top">
     <header class="header">
-      <h1>The Paradigms<br>Research Group</h1>
+      <h1>The Paradigmatic<br>Radicals Gang</h1>
       <p class="season">Season 2: Renegades, Rebels, and Excommuniés</p>
       <p class="byline">A project by Benjamin Parry and Michelle Jia.</p>
     </header>
@@ -256,14 +253,15 @@
   <div class="page">
 
     <section class="about">
-      <p class="drop-cap">The Paradigmatic Radical Gathering is a weekly gym for the mind where we read papers that could shake us out of the matrix. We are currently in Season 2: Renegades, Rebels, and Excommuniés the ideas and people that just don't fit. We're going to get spicy.</p>
+      <p class="drop-cap">PRG is a weekly gym for the mind where we read papers that could shake us out of the matrix. We are currently in Season 2: Renegades, Rebels, and Excommuniés the ideas and people that just don't fit. We're going to get spicy.</p>
     </section>
 
     <hr>
 
     <section class="readings">
-      <h2>Season 2 Upcoming Readings</h2>
-      <ol>
+      <h2>Season 2 Potential Readings</h2>
+      <p class="aside">Like all the things in the universe subject to change</p>
+      <ol class="plain">
         <li><span class="who">Nick Land</span> <span class="what">“The Dark Enlightenment,” Part 1</span> <span class="yr">2012</span></li>
         <li><span class="who">Amia Srinivasan</span> <span class="what">“Talking to My Students About Porn”</span> <span class="yr">2021</span></li>
         <li><span class="who">Val Plumwood &amp; Nick Bostrom</span> <span class="what">“Being Prey” + “The Fable of the Dragon-Tyrant”</span> <span class="yr">1996 / 2005</span></li>
@@ -280,21 +278,6 @@
         <li><span class="who">Václav Havel</span> <a class="what" href="prg-s2e1-havel.pdf">“The Power of the Powerless”</a> <span class="yr">1978</span></li>
         <li><span class="who">Susan Sontag</span> <a class="what" href="prg-s2e2-sontag.pdf">“Fascinating Fascism”</a> <span class="yr">1975</span></li>
       </ol>
-    </section>
-
-    <hr>
-
-    <section class="details">
-      <h2>Membership</h2>
-      <ul>
-        <li>Access to the full season reading list</li>
-        <li>A high quality printed ticket</li>
-        <li>Added to the season's WhatsApp group</li>
-        <li>Printed papers each session</li>
-      </ul>
-      <p class="note">Your first session is always free. After that, membership is required. You can join mid-season but dues aren't pro-rated.</p>
-      <p class="schedule">Wednesdays, 6–9 PM, Toronto.</p>
-      <p class="note">Other details will be shared in the dedicated WhatsApp group.</p>
     </section>
 
     <hr>
@@ -328,7 +311,7 @@
 
   <div class="page bottom">
     <footer class="footer">
-      <p>If you have any questions don't hesitate to reach out <a href="mailto:ben@benparry.ca">ben@benparry.ca</a> or (647) 915-3435</p>
+      <p>Set in Kalice and Source Serif. At home in Toronto, Ontario Canada. Last updated: November 11, 2026</p>
     </footer>
   </div>
 
